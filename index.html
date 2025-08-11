@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawadun Noor - Portfolio</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="particles" id="particles"></div>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Jawadun Noor</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="bento-grid">
+            <div class="bento-card hero-card">
+                <h1 class="floating">Hello, I'm Jawadun Noor</h1>
+                <p>I craft beautiful digital experiences that bring ideas to life with modern technologies and innovative solutions.</p>
+                <a href="projects.html" class="cta-button">
+                    <span>View My Work</span>
+                    <span>→</span>
+                </a>
+            </div>
+            <div class="bento-card profile-card">
+                <div class="profile-photo">
+                    <img src="assets/jawad.jpeg" alt="Jawadun Noor" id="profileImage">
+                </div>
+                <h3 class="card-title">Software Engineer</h3>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Passionate about creating innovative solutions</p>
+            </div>
+
+            <div class="bento-card about-card">
+                <h3 class="card-title">About Me</h3>
+                <p style="font-size: 0.9rem; opacity: 0.9;">I'm a passionate developer who loves creating innovative solutions and beautiful user experiences. With expertise in modern web technologies, I transform ideas into engaging digital products.</p>
+            </div>
+
+            <div class="bento-card stats-card">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+
+            <div class="bento-card stats-card">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Awards Won</span>
+            </div>
+
+            <div class="bento-card stats-card">
+                <span class="stat-number">90%</span>
+                <span class="stat-label">Go Proficiency</span>
+            </div>
+
+            <div class="bento-card skills-card">
+                <h3 class="card-title">Technical Skills</h3>
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <div class="skill-items">
+                        <span class="skill-tag">
+                            <img src="assets/logos/javascript.png" alt="JavaScript" class="skill-logo">
+                            
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/go.png" alt="Go" class="skill-logo">
+                            
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/c++.png" alt="C++" class="skill-logo">
+                            
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/java.png" alt="Java" class="skill-logo">
+                            
+                        </span>
+                         <span class="skill-tag">
+                            <img src="assets/logos/python.png" alt="Python" class="skill-logo">
+                            
+                        </span>
+                         <span class="skill-tag">
+                            <img src="assets/logos/c.png" alt="C" class="skill-logo">
+                            
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks & Libraries</h4>
+                    <div class="skill-items">
+                        <span class="skill-tag">
+                            <img src="assets/logos/swing.png" alt="Swing" class="skill-logo">
+                        
+                        </span>
+            
+                        <span class="skill-tag">
+                            <img src="assets/logos/mysql.png" alt="MYsql" class="skill-logo">
+                        
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/flutter.png" alt="Flutter" class="skill-logo">
+                            
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/firebase.png" alt="Firebase" class="skill-logo">
+                        
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Design</h4>
+                    <div class="skill-items">
+                        <span class="skill-tag">
+                            <img src="assets/logos/git.png" alt="Git" class="skill-logo">
+                        
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/figma.png" alt="Figma" class="skill-logo">
+                        
+                        </span>
+                        <span class="skill-tag">
+                            <img src="assets/logos/canva.png" alt="Canva" class="skill-logo">
+                            
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card projects-card" id="projects">
+                <div class="projects-header">
+                    <h3 class="card-title">Featured Projects</h3>
+                    <div class="projects-navigation">
+                        <button class="nav-btn prev-btn" onclick="previousProjects()" id="prevBtn">‹</button>
+                        <span class="project-counter" id="projectCounter">1 / 2</span>
+                        <button class="nav-btn next-btn" onclick="nextProjects()" id="nextBtn">›</button>
+                    </div>
+                </div>
+                <div class="projects-container">
+                    <div class="projects-grid" id="projectsGrid">
+                        <div class="projects-page active">
+                            <div class="project-item" data-project="project1">
+                                <div class="project-icon"> <img src="assets/logos/dragon.png" alt="Dragon" class="skill-logo"></div>
+                                <h4 class="project-title">Dragon-Repeller</h4>
+                                <p class="project-description">A text based RPG where you play as a hero and save the town</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">HTML5</span>
+                                    <span class="project-tag">CSS</span>
+                                </div>
+                            </div>
+                            <div class="project-item" data-project="project2">
+                                <div class="project-icon"> <img src="assets/logos/sust.png" alt="Sust" class="skill-logo"></div>
+                                <h4 class="project-title">Sust_Medical</h4>
+                                <p class="project-description">Android app for SUST students automating medical services</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">Dart</span>
+                                    <span class="project-tag">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-page">
+                            <div class="project-item" data-project="project3">
+                                <div class="project-icon"> <img src="assets/logos/pacman.png" alt="Pacman" class="skill-logo"></div>
+                                <h4 class="project-title">Pacman</h4>
+                                <p class="project-description">Clone of the popular arcade game Pacman</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Java</span>
+                                    <span class="project-tag">Swing-Java</span>
+                                </div>
+                            </div>
+                            <div class="project-item" data-project="project4">
+                                <div class="project-icon"> <img src="assets/logos/ecom.png" alt="Dragon" class="skill-logo"></div>
+                                <h4 class="project-title">E-commerce Backend</h4>
+                                <p class="project-description">"A backend application made for any E commerce platform"</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Go</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card cv-card">
+                <div class="cv-content">
+                    <div class="cv-icon floating">📄</div>
+                    <h3 class="card-title">Resume</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem;">Download my latest CV to learn more about my experience and skills</p>
+                    <div class="cv-buttons">
+                        <a href="#" class="cv-btn primary" onclick="downloadCV()">
+                            <span>📥</span>
+                            Download CV
+                        </a>
+                        <a href="#" class="cv-btn secondary" onclick="viewCV()">
+                            <span>👁️</span>
+                            View Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card achievements-card" id="achievements">
+                <h3 class="card-title">Achievements</h3>
+                <div class="achievement-item">
+                    <span class="achievement-icon"> <img src="assets/logos/hult.png" alt="Hult-Prize" class="skill-logo"></span>
+                    <div class="achievement-text">
+                        <h4>Hult Prize - 1st Runner Up</h4>
+                        <p>December 2024</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-icon"> <img src="assets/logos/mastermind.png" alt="Mastermind" class="skill-logo"></span>
+                    <div class="achievement-text">
+                        <h4>Mastermind 2024 - 4th Place</h4>
+                        <p>September 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card contact-card" id="contact">
+                <h3 class="card-title">Get In Touch</h3>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="assets/logos/gmail.png" alt="gmail" class="skill-logo"></span>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <p>jawadunnoor@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="assets/logos/phone.png" alt="Phone" class="skill-logo"></span>
+                        <div class="contact-info">
+                            <h4>Phone</h4>
+                            <p>01648956855</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="assets/logos/facebook.png" alt="Facebook" class="skill-logo"></span>
+                        <div class="contact-info">
+                            <h4>Facebook</h4>
+                            <p><a href="https://www.facebook.com/jawadn.jeem.94" target="_blank">Jawadun Noor</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="assets/logos/git.png" alt="Github" class="skill-logo"></span>
+                        <div class="contact-info">
+                            <h4>Github</h4>
+                            <p><a href="https://github.com/Jawadun" target="_blank">Jawadun</a></p>
+                        </div>
+                    </div>
+                     <div class="contact-item">
+                        <span class="contact-icon"><img src="assets/logos/linkedin.png" alt="Github" class="skill-logo"></span>
+                        <div class="contact-info">
+                            <h4>linkedin</h4>
+                            <p><a href="https://www.linkedin.com/in/jawadun-noor-769a77365/" target="_blank">Jawadun Noor</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card location-card">
+                <div class="location-icon floating">🌍</div>
+                <div class="location-text">
+                    <h3>Based in</h3>
+                    <p>Sylhet, Bangladesh</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; opacity: 0.7; border-top: 1px solid rgba(100, 255, 218, 0.1); margin-top: 4rem;">
+        <p>&copy; 2025 Jawadun Noor. All rights reserved.</p>
+    </footer>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Details</h2>
+                <button class="close-btn" onclick="closeProjectModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+
+ <script src="script.js"></script>
+    
+</body>
+</html>

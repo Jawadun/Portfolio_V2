@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Jawadun Noor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #64ffda;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #64ffda;
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #64ffda, #00d9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+        }
+
+        .category-title {
+            color: #64ffda;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-name {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+        }
+
+        .skill-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .skill-level-text {
+            color: #64ffda;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #64ffda, #00d9ff);
+            border-radius: 4px;
+            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
+        }
+
+        .skill-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #64ffda;
+            margin-bottom: 3rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+
+        .experience-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            color: #64ffda;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .experience-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #64ffda;
+        }
+
+        /* Certifications */
+        .certifications-section {
+            margin: 4rem 0;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-3px);
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #64ffda;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-title { font-size: 2rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(100, 255, 218, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="particles" id="particles"></div>
+
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Jawadun Noor</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#achievements">Achievements</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Technical Skills</h1>
+            <p class="page-subtitle">A comprehensive overview of my technical expertise and proficiency levels</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">💻</div>
+                    <h2 class="category-title">Programming Languages</h2>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/c++.png" alt="C++" class="skill-logo">
+                                C++
+                            </div>
+                            <span class="skill-level-text">Intermediate - 80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                        <p class="skill-description">Desktop applications, game development and Competitive programming</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/go.png" alt="C++" class="skill-logo">
+                                Go
+                            </div>
+                            <span class="skill-level-text">Intermediate - 90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                        <p class="skill-description">RESTful api, Concurrency, microservices</p>
+                    </div>
+
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/java.png" alt="Java" class="skill-logo">
+                                Java
+                            </div>
+                            <span class="skill-level-text">Intermediate - 58%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="58%"></div>
+                        </div>
+                        <p class="skill-description">Strong foundation in object-oriented programming and Swing framework</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/javascript.png" alt="JavaScript" class="skill-logo">
+                                JavaScript
+                            </div>
+                            <span class="skill-level-text">Intermediate - 50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="50%"></div>
+                        </div>
+                        <p class="skill-description">Frontend development, DOM manipulation, and modern ES6+ features</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/python.png" alt="C++" class="skill-logo">
+                                Python
+                            </div>
+                            <span class="skill-level-text">Intermediate - 50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="50%"></div>
+                        </div>
+                        <p class="skill-description">Data science and Machine learning</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">🌐</div>
+                    <h2 class="category-title">Web Development</h2>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/mern.png" alt="React" class="skill-logo">
+                                MERN Stack
+                            </div>
+                            <span class="skill-level-text">Intermediate - 40%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="40%"></div>
+                        </div>
+                        <p class="skill-description">MongoDB, Express.js, React, and Node.js for full-stack applications</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/golang.png" alt="Node.js" class="skill-logo">
+                                Backend with Go
+                            </div>
+                            <span class="skill-level-text">Beginner - 30%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="30%"></div>
+                        </div>
+                        <p class="skill-description">RESTful APIs, microservices architecture, and server-side development</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/mysql.png" alt="Database" class="skill-logo">
+                                Database Management
+                            </div>
+                            <span class="skill-level-text">Beginner - 10%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="10%"></div>
+                        </div>
+                        <p class="skill-description">SQL, Relational database and data modeling concepts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">📱</div>
+                    <h2 class="category-title">Mobile Development</h2>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/flutter.png" alt="Flutter" class="skill-logo">
+                                Flutter & Dart
+                            </div>
+                            <span class="skill-level-text">Intermediate - 55%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="55%"></div>
+                        </div>
+                        <p class="skill-description">Cross-platform mobile app development with beautiful UIs</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/firebase.png" alt="Firebase" class="skill-logo">
+                                Firebase
+                            </div>
+                            <span class="skill-level-text">Intermediate - 70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                        <p class="skill-description">Authentication, real-time database, cloud functions, and hosting</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">🛠️</div>
+                    <h2 class="category-title">Tools & Design</h2>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/git.png" alt="Git" class="skill-logo">
+                                Git & GitHub
+                            </div>
+                            <span class="skill-level-text">Advanced - 90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                        <p class="skill-description">Version control, collaboration, and open source contributions</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/figma.png" alt="Figma" class="skill-logo">
+                                Figma
+                            </div>
+                            <span class="skill-level-text">Advanced - 85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                        <p class="skill-description">UI/UX design, prototyping, and design system creation</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">
+                                <img src="assets/logos/canva.png" alt="Canva" class="skill-logo">
+                                Canva
+                            </div>
+                            <span class="skill-level-text">Advanced - 90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                        <p class="skill-description">Graphic design, presentations, and visual content creation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience-section">
+            <h2 class="section-title">Areas of Expertise</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-icon">🏗️</div>
+                    <h3 class="experience-title">Full-Stack Development</h3>
+                    <ul class="experience-list">
+                        <li>End-to-end web application development</li>
+                        <li>RESTful API design and implementation</li>
+                        <li>Database design and optimization</li>
+                        <li>Modern frontend frameworks</li>
+                        <li>Server deployment and maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">📱</div>
+                    <h3 class="experience-title">Mobile App Development</h3>
+                    <ul class="experience-list">
+                        <li>Cross-platform app development</li>
+                        <li>Native performance optimization</li>
+                        <li>Real-time data synchronization</li>
+                        <li>Push notifications and analytics</li>
+                        <li>App store deployment</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">🎮</div>
+                    <h3 class="experience-title">Game Development</h3>
+                    <ul class="experience-list">
+                        <li>2D game mechanics and physics</li>
+                        <li>Game loop and state management</li>
+                        <li>User interface design</li>
+                        <li>Performance optimization</li>
+                        <li>Cross-platform compatibility</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">🎨</div>
+                    <h3 class="experience-title">UI/UX Design</h3>
+                    <ul class="experience-list">
+                        <li>User-centered design principles</li>
+                        <li>Responsive web design</li>
+                        <li>Design systems and style guides</li>
+                        <li>Accessibility and usability</li>
+                        <li>Prototyping and user testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="certifications-section">
+            <h2 class="section-title">Learning & Development</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
+                    <div class="cert-title">Problem Solving</div>
+                    <div class="cert-issuer">Competitive Programming</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🚀</div>
+                    <div class="cert-title">Innovation</div>
+                    <div class="cert-issuer">Hackathons & Competitions</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">💡</div>
+                    <div class="cert-title">Creative Thinking</div>
+                    <div class="cert-issuer">Design Challenges</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🤝</div>
+                    <div class="cert-title">Team Leadership</div>
+                    <div class="cert-issuer">Project Management</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📚</div>
+                    <div class="cert-title">Continuous Learning</div>
+                    <div class="cert-issuer">Self-Directed Study</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🎯</div>
+                    <div class="cert-title">Goal Achievement</div>
+                    <div class="cert-issuer">Competition Success</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width;
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            animateSkillBars();
+        });
+    </script>
+</body>
+</html>
