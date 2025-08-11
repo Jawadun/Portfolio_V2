@@ -106,7 +106,6 @@
 
 
 
-        // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 50;
@@ -120,8 +119,7 @@
                 particlesContainer.appendChild(particle);
             }
         }
-
-        // Smooth scrolling for navigation links
+        
         function initSmoothScrolling() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -137,7 +135,6 @@
             });
         }
 
-        // Header scroll effect
         function initHeaderScrollEffect() {
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('header');
@@ -149,7 +146,6 @@
             });
         }
 
-        // Bento card intersection observer for animations
         function initBentoAnimations() {
             const observerOptions = {
                 threshold: 0.1,
@@ -165,7 +161,6 @@
                 });
             }, observerOptions);
 
-            // Initially hide cards and observe them
             document.querySelectorAll('.bento-card').forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
@@ -174,7 +169,7 @@
             });
         }
 
-        // Project modal functions
+        
         function openProjectModal(projectId) {
             const modal = document.getElementById('projectModal');
             const project = projects[projectId];
@@ -226,7 +221,6 @@
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
             
-            // Animate modal entrance
             requestAnimationFrame(() => {
                 modal.style.opacity = '1';
                 modal.querySelector('.modal-content').style.transform = 'translateY(0) scale(1)';
@@ -244,7 +238,6 @@
             }, 300);
         }
 
-        // Close modal when clicking outside
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('projectModal');
             if (event.target === modal) {
@@ -252,7 +245,6 @@
             }
         });
 
-        // Projects navigation
         let currentProjectPage = 0;
         const totalProjectPages = 2;
 
@@ -281,14 +273,12 @@
 
         if (index === currentProjectPage) {
             page.classList.add('active');
-            // make visible & interactive
             page.style.display = ''; // allow css default (grid)
             page.style.visibility = 'visible';
             page.style.pointerEvents = 'auto';
             page.setAttribute('aria-hidden', 'false');
         } else {
             if (index < currentProjectPage) page.classList.add('prev');
-            // hide & prevent clicks
             page.style.display = 'none';
             page.style.visibility = 'hidden';
             page.style.pointerEvents = 'none';
@@ -302,7 +292,6 @@
 }
 
 
-        // CV functions
         function downloadCV() {
             
             
@@ -344,7 +333,6 @@
             });
         });
 
-        // Add hover effects to bento cards
         function initBentoCardEffects() {
             document.querySelectorAll('.bento-card').forEach(card => {
                 card.addEventListener('mouseenter', function() {
@@ -357,7 +345,6 @@
             });
         }
 
-        // Add stagger animation to skills tags
         function initSkillsAnimation() {
             const skillTags = document.querySelectorAll('.skill-tag');
             skillTags.forEach((tag, index) => {
@@ -367,7 +354,6 @@
             });
         }
 
-        // Add CSS animation for fade in up
         const fadeInUpStyle = document.createElement('style');
         fadeInUpStyle.textContent = `
             @keyframes fadeInUp {
@@ -404,13 +390,11 @@
         `;
         document.head.appendChild(fadeInUpStyle);
 
-        // Initialize profile image
         function initProfileImage() {
             const profileImage = document.getElementById('profileImage');
             const placeholder = document.querySelector('.photo-placeholder');
             
             profileImage.addEventListener('error', function() {
-                // Create a placeholder if image fails to load
                 const placeholderDiv = document.createElement('div');
                 placeholderDiv.style.cssText = `
                     width: 100%; height: 100%; 
@@ -424,13 +408,11 @@
             });
         }
 
-        // Add click-to-copy functionality for contact info
         function initContactCopy() {
             document.querySelectorAll('.contact-item').forEach(item => {
                 item.addEventListener('click', function() {
                     const text = this.querySelector('p').textContent;
                     navigator.clipboard.writeText(text).then(() => {
-                        // Show a temporary success message
                         const originalText = this.querySelector('p').textContent;
                         this.querySelector('p').textContent = 'Copied!';
                         this.querySelector('p').style.color = '#64ffda';
@@ -447,7 +429,6 @@
     const grid = document.getElementById('projectsGrid');
     if (!grid) return;
 
-    // ensure each item has a data-project (fallback if you didn't update HTML)
     document.querySelectorAll('.project-item').forEach((item, i) => {
         if (!item.dataset.project) item.dataset.project = `project${i + 1}`;
     });
@@ -461,7 +442,6 @@
     });
 }
 
-// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     createParticles();
     initSmoothScrolling();
@@ -472,14 +452,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initProfileImage();
     initContactCopy();
     initProjectClicks();
-    updateProjectsDisplay(); // Initialize project navigation
+    updateProjectsDisplay(); 
     initProjectDelegation();
             
-            // Add a welcome message
-            console.log('🚀 Welcome to Jawadun Noor\'s Portfolio! Built with modern web technologies.');
+            console.log(' Welcome to Jawadun Noor\'s Portfolio! Built with modern web technologies.');
         });
 
-        // Add keyboard navigation for accessibility
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('projectModal');
